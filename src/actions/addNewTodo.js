@@ -1,13 +1,16 @@
 // click event handling user adding a new todo
 
-const addNewTodo = (newTodo) => {
+let todoId = 0
+
+const addNewTodo = (newTodoText) => {
 
     // logging value to be sent as payload
     console.log("you added a new todo: ", newTodo)
 
     return {
         type: "ADD_TODO",
-        payload: newTodo
+        payload: newTodoText,
+        id: todoId++
     }
 }
 
