@@ -11,8 +11,9 @@ class AddTodo extends Component {
                 <form>
                     <input type="text" ref="newTodo"/>
 
-                    // onClick preventing default and calling addNewTodo action
+                    {// onClick preventing default and calling addNewTodo action
                     // with the input value, grabbed through refs
+                    }
                     <button type="submit" onClick={(e) => {
                         e.preventDefault();
                         addNewTodo(this.refs.newTodo.value)}
