@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import addNewTodo from "../actions/addNewTodo";
 
 
@@ -27,5 +29,18 @@ class AddTodo extends Component {
 
 }
 
+
+let mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({addNewTodo: addNewTodo}, dispatch);
+}
+
+let mapStateToProps = (state) => {
+    return {
+        todos: state.testTodos
+    };
+}
+
+
+AddTodo = connect(mapDispatchToProps, mapStateToProps)(AddTodo)
 
 export default AddTodo;
